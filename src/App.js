@@ -1,3 +1,4 @@
+import './App.scss';
 import { useState } from 'react';
 import BleatList from './components/BleatList';
 import BleatForm from "./components/BleatForm";
