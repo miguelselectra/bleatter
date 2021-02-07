@@ -1,0 +1,48 @@
+{
+  "bleats": [
+    {
+      "id": 1,
+      "message": "#Dogecoin is currently worth more than an actual Nickel. Think about that for a minute",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "message": "3 Years ago today \n@SpaceX\n launched the Falcon Heavy (and Starman) to space for the first time.",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "message": "esperando a que salga el agua caliente en la ducha",
+      "userId": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "pepito",
+      "email": "pepe@gmail.com",
+      "password": "pepe123"
+    },
+    {
+      "id": 2,
+      "username": "perico",
+      "email": "perico@gmail.com",
+      "password": "per123"
+    },
+    {
+      "id": 3,
+      "username": "mike",
+      "email": "mike@gmail.com",
+      "password": "mike123"
+    },
+    {
+      "id": 4,
+      "username": "pepito",
+      "email": "pep@gmail.com",
+      "password": "pepe123"
+    }
+  ],
+  "script": {
+    "url": "npx json-server --watch data/db.json --port 8000"
+  }
+}

@@ -5,7 +5,7 @@ export default function BleatList ({bleats, setBleats}) {
     setBleats(bleats.filter(bleat => bleat.id !== id));
   }
 
-  return bleats.map((bleat) => {
+  return bleats && bleats.map((bleat) => {
     return <Bleat
       bleat={bleat}
       key={bleat.id}

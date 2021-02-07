@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Navbar ({children}) {
   return (
     <div className='navbar' >
-      <img src={logo} className="App-logo" alt="logo" />
+      <Link to='/'><img src={logo} className="App-logo" alt="logo" /></Link>
       <ul>
         <li><Link to='/'>Bleats</Link></li>
         <li><Link to='/search'>Search</Link></li>

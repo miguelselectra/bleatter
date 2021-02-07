@@ -10,8 +10,8 @@ export default function BleatForm ({ addBleatHandler }) {
     }
     const bleat = {
       message: message,
-      id: Math.random() * 9999999, // pochisimo provisional
-      author: 'Yo'
+      id: Math.trunc(Math.random() * 9999999), // pochisimo provisional x2
+      userId: 1
     };
     addBleatHandler(bleat);
     setMessage('');

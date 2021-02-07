@@ -4,23 +4,42 @@ import {
   Route,
 } from "react-router-dom";
 import './App.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import ThemeSelector from "./components/ThemeSelector";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
+import axios from "axios";
 
 export default function App() {
-  const [bleats, setBleats] = useState([
-    { message: 'hola', id: 1, author: 'Pepe' },
-    { message: 'adios', id: 2, author: 'Mario' },
-    { message: 'testeito', id: 3, author: 'Luisito' },
-  ]);
+  const [bleats, setBleats] = useState([]);
   const [theme, setTheme] = useState('App white');
+  const [userLogged, setUserLogged] = useState({
+    id: 1,
+    username: "pepito",
+    email: "pepe@gmail.com",
+    password: "pepe123"
+  });
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/bleats?_expand=user')
+      .then((response) => {
+        setBleats(response.data);
+      }).catch(() => {
+        console.log('Dont forget launch: npx json-server --watch data/db.json --port 8000');
+      });
+  }, []);
 
   const addBleatHandler = (bleat) => {
-    setBleats([...bleats, bleat]);
+    axios.post('http://localhost:8000/bleats', bleat)
+      .then((response) => {
+        let bleatCreated = response.data;
+        bleatCreated.user = userLogged;
+        setBleats([...bleats, bleatCreated]);
+      }).catch(() => {
+      console.log('Dont forget launch: npx json-server --watch data/db.json --port 8000');
+    });
   }
 
   return (
