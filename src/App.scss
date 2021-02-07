@@ -9,6 +9,16 @@
   width: auto;
 }
 
+.white {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
 .navbar {
   flex-grow: 2;
   min-width: 150px;
@@ -21,9 +31,14 @@
   img {
     width: 50px;
   }
+
+  .theme-selector {
+    margin: 10px;
+  }
 }
 
 .home {
+  color: black;
   background-color: bisque;
   flex-grow: 3;
 }

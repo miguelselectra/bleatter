@@ -1,8 +1,8 @@
 import logo from '../logo.svg';
 
-export default function Navbar () {
+export default function Navbar ({children}) {
   return (
-    <div className='navbar'>
+    <div className='navbar' >
       <img src={logo} className="App-logo" alt="logo" />
       <ul>
         <li>Bleats</li>
@@ -10,6 +10,7 @@ export default function Navbar () {
         <li>Perfil</li>
         <li>Menciones</li>
       </ul>
+      {children}
     </div>
   );
 }
