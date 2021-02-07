@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function BleatForm ({ addBleat }) {
+export default function BleatForm ({ addBleatHandler }) {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -13,13 +13,12 @@ export default function BleatForm ({ addBleat }) {
       id: Math.random() * 9999999, // pochisimo provisional
       author: 'Yo'
     };
-    addBleat(bleat);
+    addBleatHandler(bleat);
     setMessage('');
   }
 
   return (
     <div className='bleat-creator'>
-      Bleatea!
       <form onSubmit={handleSubmit}>
         <input
           type="text"

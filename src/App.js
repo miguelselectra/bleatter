@@ -1,8 +1,7 @@
 import './App.scss';
 import { useState } from 'react';
-import BleatList from './components/BleatList';
-import BleatForm from "./components/BleatForm";
-import './App.css';
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 export default function App() {
   const [bleats, setBleats] = useState([
@@ -17,11 +16,9 @@ export default function App() {
 
   return (
     <div className="App">
-      <BleatForm
-        addBleat={addBleatHandler}
-      />
-
-      <BleatList
+      <Navbar />
+      <Home
+        addBleatHandler={addBleatHandler}
         bleats={bleats}
         setBleats={setBleats}
       />
