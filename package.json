@@ -1,5 +1,6 @@
 {
-  "name": "untitled",
+  "homepage": "htpps://miguelselectra.github.io/bleater",
+  "name": "bleater",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "node-sass": "^5.0.0"
   }
 }
