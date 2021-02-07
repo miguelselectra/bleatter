@@ -1,6 +1,6 @@
 import Bleat from "./Bleat";
 
-export default function BleatList ({bleats, setBleats}) {
+export default function BleatList ({ bleats, setBleats, userLogged }) {
   const deleteBleatHandler = (id) => {
     setBleats(bleats.filter(bleat => bleat.id !== id));
   }
@@ -10,6 +10,7 @@ export default function BleatList ({bleats, setBleats}) {
       bleat={bleat}
       key={bleat.id}
       deleteHandler={ () => deleteBleatHandler(bleat.id) }
+      userLogged={userLogged}
     />;
   });
 }

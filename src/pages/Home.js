@@ -12,6 +12,7 @@ export default function Home ({bleats, setBleats, addBleatHandler, userLogged })
       <BleatList
         bleats={bleats}
         setBleats={setBleats}
+        userLogged={userLogged}
       />
     </div>
   );
