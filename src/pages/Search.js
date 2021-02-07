@@ -1,7 +1,8 @@
 export default function Search () {
   return (
     <div className='search'>
-      <input type="text"/> Busca
+      wip
+      <input type="text"/> <button>Busca</button>
     </div>
   );
 }

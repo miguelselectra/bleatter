@@ -15,12 +15,7 @@ import axios from "axios";
 export default function App() {
   const [bleats, setBleats] = useState([]);
   const [theme, setTheme] = useState('App white');
-  const [userLogged, setUserLogged] = useState({
-    id: 1,
-    username: "pepito",
-    email: "pepe@gmail.com",
-    password: "pepe123"
-  });
+  const [userLogged, setUserLogged] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:8000/bleats?_expand=user')
@@ -56,6 +51,7 @@ export default function App() {
               <Home
                 addBleatHandler={addBleatHandler}
                 bleats={bleats}
+                userLogged={userLogged}
                 setBleats={setBleats}
               />
             </Route>
@@ -63,7 +59,10 @@ export default function App() {
               <Search />
             </Route>
             <Route path='/login'>
-              <Login />
+              <Login
+                userLogged={userLogged}
+                setUserLogged={setUserLogged}
+              />
             </Route>
             <Route path='*'>
               404

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function BleatForm ({ addBleatHandler }) {
+export default function BleatForm ({ addBleatHandler, userLogged }) {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -9,12 +9,16 @@ export default function BleatForm ({ addBleatHandler }) {
       return;
     }
     const bleat = {
-      message: message,
       id: Math.trunc(Math.random() * 9999999), // pochisimo provisional x2
+      message: message,
       userId: 1
     };
     addBleatHandler(bleat);
     setMessage('');
+  }
+
+  if (userLogged === null) {
+    return null;
   }
 
   return (
