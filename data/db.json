@@ -34,12 +34,6 @@
       "username": "mike",
       "email": "mike@gmail.com",
       "password": "mike123"
-    },
-    {
-      "id": 4,
-      "username": "pepito",
-      "email": "pep@gmail.com",
-      "password": "pepe123"
     }
   ],
   "script": {

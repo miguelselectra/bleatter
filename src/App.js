@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import axios from "axios";
+import Profile from "./components/Profile";
+import ProfileParam from "./components/ProfileParam";
 
 export default function App() {
   const [bleats, setBleats] = useState([]);
@@ -36,11 +38,13 @@ export default function App() {
       console.log('Dont forget launch: npx json-server --watch data/db.json --port 8000');
     });
   }
-
+// todo: contexto theme, añadir date a un bleat, añadir confirm a eliminar
   return (
     <Router>
       <div className={theme}>
-        <Navbar>
+        <Navbar
+          userLogged={userLogged}
+        >
           <ThemeSelector
             themeSelected={theme}
             setTheme={setTheme}
@@ -56,11 +60,20 @@ export default function App() {
               />
             </Route>
             <Route path='/search'>
-              <Search />
+              <Search
+                userLogged={userLogged}
+              />
             </Route>
             <Route path='/login'>
               <Login
                 userLogged={userLogged}
+                setUserLogged={setUserLogged}
+              />
+            </Route>
+            <Route path='/users/:username'>
+              <ProfileParam
+                userLogged={userLogged}
+                user={userLogged}
                 setUserLogged={setUserLogged}
               />
             </Route>

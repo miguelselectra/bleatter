@@ -4,8 +4,8 @@ export default function Bleat ({bleat, deleteHandler, userLogged}) {
     <div>
       <button>Responder</button>
       <button>Like</button>
-      {userLogged.id === bleat.user.id && <button>Opciones</button>}
-      {userLogged.id === bleat.user.id  && <button onClick={deleteHandler}>Delete</button>}
+      {userLogged && userLogged.id === bleat.user.id && <button>Opciones</button>}
+      {userLogged && userLogged.id === bleat.user.id  && <button onClick={deleteHandler}>Delete</button>}
     </div>
   </div>;
 }
