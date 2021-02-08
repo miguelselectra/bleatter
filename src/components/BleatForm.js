@@ -11,7 +11,7 @@ export default function BleatForm ({ addBleatHandler, userLogged }) {
     const bleat = {
       id: Math.trunc(Math.random() * 9999999), // pochisimo provisional x2
       message: message,
-      userId: 1
+      userId: userLogged.id
     };
     addBleatHandler(bleat);
     setMessage('');
