@@ -11,7 +11,7 @@ export default function NewSearch ({userLogged}) {
   const [ options, setOptions ] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/users?username_like=^' + searchParam + '(h?)$&_embed=bleats')
+    axios.get('http://localhost:8000/users?username_like=' + searchParam + '&_embed=bleats') // username_like=^' + searchParam + '(h?)$  (not close enough)
       .then((response) => {
         console.log(response.data);
         if (response.data.length !== 0) {
