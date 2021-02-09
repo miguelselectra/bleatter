@@ -33,8 +33,8 @@ export default function Login ({ userLogged, setUserLogged }) {
           value={email}
         />
         <input type="password"
-               onChange={(e) => setPassword(e.target.value)}
-               value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
         <button onClick={loggerUser}>Logueate</button>
       </div>}

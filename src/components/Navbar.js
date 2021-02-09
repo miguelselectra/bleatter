@@ -12,7 +12,8 @@ export default function Navbar ({children, userLogged}) {
       <Link to='/'><img src={logo} className="App-logo" alt="logo" /></Link>
       <ul>
         <li><Link to='/'>Bleats</Link></li>
-        <li><Link to='/search'>Search</Link></li>
+        <li><Link to='/old.search'>Search input</Link></li>
+        <li><Link to='/search'>Search select</Link></li>
         { ! userLogged && <li><Link to='/login'>Login</Link></li>}
         { userLogged &&  <li><Link to={myProfileUrl}>My Profile</Link></li>}
       </ul>

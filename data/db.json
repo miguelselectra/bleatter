@@ -26,13 +26,13 @@
     {
       "id": 2,
       "username": "perico",
-      "email": "perico@gmail.com",
+      "email": "perico",
       "password": "per123"
     },
     {
       "id": 3,
       "username": "mike",
-      "email": "mike@gmail.com",
+      "email": "perico",
       "password": "mike123"
     }
   ],

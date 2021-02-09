@@ -11,8 +11,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import axios from "axios";
-import Profile from "./components/Profile";
 import ProfileParam from "./components/ProfileParam";
+import NewSearch from "./pages/NewSearch";
 
 export default function App() {
   const [bleats, setBleats] = useState([]);
@@ -59,8 +59,13 @@ export default function App() {
                 setBleats={setBleats}
               />
             </Route>
-            <Route path='/search'>
+            <Route path='/old.search'>
               <Search
+                userLogged={userLogged}
+              />
+            </Route>
+            <Route path='/search'>
+              <NewSearch
                 userLogged={userLogged}
               />
             </Route>
