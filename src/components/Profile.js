@@ -6,7 +6,7 @@ export default function Profile ({userLogged, user, setUserLogged}) {
   }
   return <div>
     <p>Este es el perfil de @{user.username}</p>
-    <p>Enviame un email a {user.email}</p>
+    <p>Contactame en {user.email}</p>
     <div>
       {userLogged && <button>MD wip</button>}
       {userLogged && <button>Follow wip</button>}
