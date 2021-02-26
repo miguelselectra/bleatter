@@ -24,7 +24,7 @@ export default function ProfileParam ({userLogged, setUserLogged}) {
   return (
     <div className='search'>
       { userSearched && <Profile
-        setUserLogged={setUserLogged}
+        // setUserLogged={setUserLogged}
         user={userSearched}
         userLogged={userLogged}
       />}

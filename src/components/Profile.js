@@ -1,6 +1,10 @@
 import {Link} from "react-router-dom";
+import { logout } from '../features/userSlice'
+import { useDispatch } from 'react-redux'
 
 export default function Profile ({userLogged, user, setUserLogged}) {
+  const dispatch = useDispatch()
+
   if (! user) {
     return null;
   }
@@ -12,7 +16,7 @@ export default function Profile ({userLogged, user, setUserLogged}) {
       {userLogged && <button>Follow wip</button>}
       {userLogged && userLogged.id === user.id && <button>Opciones wip</button>}
       {! userLogged && <Link to='login'>Login to contact with @{user.username}</Link>}
-      {userLogged && userLogged.id === user.id && <button onClick={() => setUserLogged(null)}>Cierra sesión</button>}
+      {userLogged && userLogged.id === user.id && <button onClick={() => dispatch(logout())}>Cierra sesión</button>}
     </div>
   </div>;
 }

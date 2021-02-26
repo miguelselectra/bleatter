@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { login, logout } from '../features/userSlice'
 
 export default function Login ({ userLogged, setUserLogged }) {
   const [email, setEmail] = useState('pepe@gmail.com');
   const [password, setPassword] = useState('pepe123');
   const history = useHistory();
+  const dispatch = useDispatch()
 
   const loggerUser = () => {
     axios.get(`http://localhost:8000/users?email=${email}&password=${password}`)
@@ -13,7 +16,8 @@ export default function Login ({ userLogged, setUserLogged }) {
         if ( response.data.length === 0 ) {
           console.log('email o contraseña incorrecta');
         }
-        setUserLogged(response.data[0])
+        // setUserLogged(response.data[0])
+        dispatch(login(response.data[0]));
         history.push('/');
       }).catch(() => {
       console.log('Dont forget launch: npx json-server --watch data/db.json --port 8000');
@@ -21,7 +25,7 @@ export default function Login ({ userLogged, setUserLogged }) {
   }
 
   const unLoggerUser = () => {
-    setUserLogged(null)
+    dispatch(logout())
   }
 
   return (

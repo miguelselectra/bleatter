@@ -13,11 +13,13 @@ import Search from "./pages/Search";
 import axios from "axios";
 import ProfileParam from "./components/ProfileParam";
 import NewSearch from "./pages/NewSearch";
+import {useSelector} from "react-redux";
 
 export default function App() {
   const [bleats, setBleats] = useState([]);
   const [theme, setTheme] = useState('App white');
-  const [userLogged, setUserLogged] = useState(null);
+  // const [userLogged, setUserLogged] = useState(null);
+  const userLogged = useSelector(state => state.user.user)
 
   useEffect(() => {
     axios.get('http://localhost:8000/bleats?_expand=user')
@@ -72,14 +74,14 @@ export default function App() {
             <Route path='/login'>
               <Login
                 userLogged={userLogged}
-                setUserLogged={setUserLogged}
+                // setUserLogged={setUserLogged}
               />
             </Route>
             <Route path='/users/:username'>
               <ProfileParam
                 userLogged={userLogged}
                 user={userLogged}
-                setUserLogged={setUserLogged}
+                // setUserLogged={setUserLogged}
               />
             </Route>
             <Route path='*'>
